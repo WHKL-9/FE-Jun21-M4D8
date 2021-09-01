@@ -1,6 +1,6 @@
 import { Nav } from "react-bootstrap";
 
-export const Navbar = () => (
+const NavBar = () => (
   <Nav
     activeKey="/home"
     onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
@@ -23,3 +23,5 @@ export const Navbar = () => (
     </Nav.Item>
   </Nav>
 );
+
+export default NavBar;

@@ -5,13 +5,14 @@ import MovieGrid from "../components/MovieGrid";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const goGetMovies = async () => {
+    const Movies = await getMovies();
+    setMovies(Movies.Search);
+    console.log("Movies", Movies);
+    console.log("movies", movies);
+  };
 
   useEffect(() => {
-    const goGetMovies = async () => {
-      const HPMovies = await getMovies();
-      setMovies(HPMovies);
-    };
-
     goGetMovies();
   }, []);
   return <div>{movies.length > 0 && <MovieGrid movies={movies} />}</div>;

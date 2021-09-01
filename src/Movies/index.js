@@ -7,6 +7,7 @@ export const getMovies = async () => {
     );
     if (response.ok) {
       const movie_json = await response.json();
+      console.log("movie fetched");
       return movie_json;
     } else {
       throw new Error("Movies could not be fetched!");
